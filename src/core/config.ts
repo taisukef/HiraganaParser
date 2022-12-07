@@ -1,4 +1,4 @@
-import { KeyConfig, KeyConfigs } from "./parser.interface"
+import { KeyConfig, KeyConfigs } from "./parser.interface.js"
 
 export const findConfig = (
   configs: KeyConfigs,

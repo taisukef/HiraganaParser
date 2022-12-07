@@ -3,7 +3,8 @@
 タイピングゲームが作れるよ✌️
 
 ## 使い方サンプル
-`npm install hiragana-parser` や `yarn add hiragana-parser` でパッケージを入れれます
+`npm install hiragana-parser` や `yarn add hiragana-parser` でパッケージを入れるか、
+`import { GameParser } from "https://taisukef.github.io/HiragaraParser/HiraganaParser.js";` のようにESモジュールとしてimportします
 
 ### サンプル1
 寿司打のようなタイピングゲームを作りたい場合は以下のように使えます
@@ -56,6 +57,28 @@ console.log(hiraganaToRomas('ねっこ'))
   'neltsuko', 'neltsuco',
   'nextsuko', 'nextsuco'
 ]
+```
+
+# サンプル3 (ESmodules)
+
+```JavaScript
+import { GameParser } from "https://taisukef.github.io/HiraganaParser/HiraganaParser.js";
+
+const parser = new GameParser({ hiraganas: 'きんにく' })
+console.log(parser.input('k'))
+console.log(parser.input('n'))
+console.log(parser.input('i'))
+console.log(parser.isComplete())
+console.log(parser.inputedRoma)
+console.log(parser.notInputedRoma)
+```
+
+## ESモジュールのビルドの仕方
+
+```sh
+tsc -t es5 --module es2020 --lib es2020,dom --outDir es/ src/*.ts
+deno bundle es/index.js > es/HiraganaParser.bundle.js
+terser -c -m ---module -o HiraganaParser.js es/HiraganaParser.bundle.js
 ```
 
 ### キー配列のカスタム

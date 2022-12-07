@@ -1,4 +1,5 @@
-import { GameParser } from "./index.js";
+//import { GameParser } from "./HiraganaParser.js";
+import { GameParser } from "./lib/esm/index.js";
 
 const parser = new GameParser({ hiraganas: 'きんにく' })
 console.log(parser.input('k'))

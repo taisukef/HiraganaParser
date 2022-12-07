@@ -1,6 +1,6 @@
-import { makeAnswers } from "./converter"
-import { hiraganaToRomans, Roman } from "./parser"
-import { KeyConfigs } from "./parser.interface"
+import { makeAnswers } from "./converter.js"
+import { hiraganaToRomans, Roman } from "./parser.js"
+import { KeyConfigs } from "./parser.interface.js"
 
 export interface GameParserOption {
   hiraganas: string
