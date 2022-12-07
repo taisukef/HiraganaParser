@@ -59,7 +59,27 @@ console.log(hiraganaToRomas('ねっこ'))
 ]
 ```
 
-# サンプル3 (ESmodules)
+# サンプル3 (型情報付きESモジュール)
+
+```JavaScript
+import { GameParser } from "https://taisukef.github.io/HiraganaParser/lib/esm/index.js";
+
+const parser = new GameParser({ hiraganas: 'きんにく' })
+console.log(parser.input('k'))
+console.log(parser.input('n'))
+console.log(parser.input('i'))
+console.log(parser.isComplete())
+console.log(parser.inputedRoma)
+console.log(parser.notInputedRoma)
+```
+
+## 型情報付きESモジュールのビルドの仕方
+
+```sh
+npm run build:esm
+```
+
+# サンプル4 (ESモジュールmin)
 
 ```JavaScript
 import { GameParser } from "https://taisukef.github.io/HiraganaParser/HiraganaParser.js";
@@ -73,7 +93,7 @@ console.log(parser.inputedRoma)
 console.log(parser.notInputedRoma)
 ```
 
-## ESモジュールのビルドの仕方
+## ESモジュールminのビルドの仕方
 
 ```sh
 tsc -t es5 --module es2020 --lib es2020,dom --outDir es/ src/*.ts
