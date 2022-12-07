@@ -4,7 +4,7 @@
 
 ## 使い方サンプル
 `npm install hiragana-parser` や `yarn add hiragana-parser` でパッケージを入れるか、
-`import { GameParser } from "https://taisukef.github.io/HiraganaParser/HiraganaParser.js";` のようにESモジュールとしてimportします
+`import { GameParser } from "https://taisukef.github.io/HiraganaParser/HiraganaParser.min.js";` のようにESモジュールとしてimportします
 
 ### サンプル1
 寿司打のようなタイピングゲームを作りたい場合は以下のように使えます
@@ -82,7 +82,7 @@ npm run build:esm
 # サンプル4 (ESモジュールmin)
 
 ```JavaScript
-import { GameParser } from "https://taisukef.github.io/HiraganaParser/HiraganaParser.js";
+import { GameParser } from "https://taisukef.github.io/HiraganaParser/HiraganaParser.min.js";
 
 const parser = new GameParser({ hiraganas: 'きんにく' })
 console.log(parser.input('k'))
@@ -96,9 +96,9 @@ console.log(parser.notInputedRoma)
 ## ESモジュールminのビルドの仕方
 
 ```sh
-tsc -t es5 --module es2020 --lib es2020,dom --outDir es/ src/*.ts
-deno bundle es/index.js > es/HiraganaParser.bundle.js
-terser -c -m ---module -o HiraganaParser.js es/HiraganaParser.bundle.js
+npm run build:esm
+deno bundle lib/esm/index.js > HiraganaParser.bundle.js
+terser -c -m ---module -o HiraganaParser.min.js HiraganaParser.bundle.js
 ```
 
 ### キー配列のカスタム
