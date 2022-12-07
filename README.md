@@ -4,7 +4,7 @@
 
 ## 使い方サンプル
 `npm install hiragana-parser` や `yarn add hiragana-parser` でパッケージを入れるか、
-`import { GameParser } from "https://taisukef.github.io/HiragaraParser/HiraganaParser.js";` のようにESモジュールとしてimportします
+`import { GameParser } from "https://taisukef.github.io/HiraganaParser/HiraganaParser.js";` のようにESモジュールとしてimportします
 
 ### サンプル1
 寿司打のようなタイピングゲームを作りたい場合は以下のように使えます
